@@ -1,0 +1,19 @@
+.app {
+  margin: 0 auto;
+  padding: 5%;
+  max-width: 1200px;
+  display: grid;
+  gap: 5%;
+  grid-template-areas: 
+  'AppHeader AppHeader AppHeader'
+  'search-panel search-panel search-panel '
+  'PostList PostList PostList'
+  ' PostAddForm PostAddForm PostAddForm ';
+}
+.search-panel{
+  grid-area: search-panel ;
+  display: flex;
+  flex-direction: space-between;
+  align-items:center;
+
+}
