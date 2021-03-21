@@ -1,0 +1,24 @@
+.addPostPanel {
+  grid-area: PostAddForm;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addPostInput {
+  width: auto;
+  flex-grow: 1;
+  margin-right: 5px;
+  height: 30px;
+}
+.addPostButton {
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  flex-basis: 15%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

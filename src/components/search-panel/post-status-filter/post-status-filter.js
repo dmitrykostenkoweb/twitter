@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 
-import "./post-status-filter.css";
+import style from "./post-status-filter.module.css";
 
 export default class PostStatusFilter extends Component {
   constructor(props) {
@@ -19,6 +19,7 @@ export default class PostStatusFilter extends Component {
 
       return (
         <Button
+        className={style.button}
           key={name}
           outline={buttonOutline}
           color="info"

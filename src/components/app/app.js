@@ -120,7 +120,7 @@ this.setState({term})
     return (
       <div className="app">
         <AppHeader liked={liked} allPosts={allPosts} />
-        <div className="search-panel">
+        <div className="searchPanel">
           <SearchPanel
           onUpdateSearch = {this.onUpdateSearch} />
           <PostStatusFilter

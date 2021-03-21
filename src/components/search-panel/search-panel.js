@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./search-panel.css";
+import {  Input } from "reactstrap";
+
+import style from "./search-panel.module.css";
 
 export default class SearchPanel extends Component {
   constructor(props) {
@@ -17,10 +19,10 @@ export default class SearchPanel extends Component {
 
   render() {
     return (
-      <input
+      <Input
         type="text"
         placeholder="search"
-        className="form-control search-panel  search-input"
+        className={style.input}
         onChange={this.onUpdateSearch}
       />
     );

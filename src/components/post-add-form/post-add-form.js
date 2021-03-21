@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./post-add-form.css";
+import style from "./post-add-form.module.css";
+import { Button, Input } from "reactstrap";
 
 export default class PostAddForm extends Component {
   constructor(props) {
@@ -20,23 +21,28 @@ export default class PostAddForm extends Component {
     event.preventDefault();
     this.props.onAdd(this.state.text);
     this.setState({
-      text:''
-    })
+      text: "",
+    });
   }
 
   render() {
     return (
-      <form className="bottom-panel d-flex" onSubmit={this.onSubmit}>
-        <input
+      <form className={style.addPostPanel} onSubmit={this.onSubmit}>
+        <Input
           type="text"
           placeholder="write something"
-          className="form-control new-post-label"
+          className={style.addPostInput}
           onChange={this.onValueChange}
-          value = {this.state.text}
+          value={this.state.text}
         />
-        <button type="submit" className="btn btn-outline-secondary">
+        <Button
+          color="success"
+          outline
+          type="submit"
+          className={style.addPostButton}
+        >
           Add
-        </button>
+        </Button>
       </form>
     );
   }

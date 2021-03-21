@@ -1,5 +1,6 @@
 .app-list-item {
   font-size: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .app-list-item button {
