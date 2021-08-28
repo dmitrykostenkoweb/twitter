@@ -15,10 +15,9 @@ export default class App extends Component {
         { label: "Going to learn React", important: false, like: false, id: 1 },
         { label: "That is so cool...", important: false, like: false, id: 2 },
         { label: "i need a break...", important: false, like: false, id: 3 },
-        { label: "Ленка срака...", important: true, like: false, id: 4 },
       ],
-      term: '',
-      filter: 'all',
+      term: "",
+      filter: "all",
     };
     this.deleteItem = this.deleteItem.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -89,43 +88,41 @@ export default class App extends Component {
     });
   }
 
-  searchPost(items, term){
-    if (term.length === 0){
-return items;
+  searchPost(items, term) {
+    if (term.length === 0) {
+      return items;
     }
-   return items.filter((item) => {
-      return item.label.indexOf(term) > -1
-    })
-
+    return items.filter((item) => {
+      return item.label.indexOf(term) > -1;
+    });
   }
-  filterPost(items, filter){
-if(filter === 'like'){
-  return items.filter(item => item.like)
-}else{
-  return items
-}
+  filterPost(items, filter) {
+    if (filter === "like") {
+      return items.filter((item) => item.like);
+    } else {
+      return items;
+    }
   }
-  onUpdateSearch(term){ 
-this.setState({term})
+  onUpdateSearch(term) {
+    this.setState({ term });
   }
-  onFilterSelect(filter){
-    this.setState({filter})
-
+  onFilterSelect(filter) {
+    this.setState({ filter });
   }
   render() {
-    const {data, term, filter} =this.state;
+    const { data, term, filter } = this.state;
     const liked = data.filter((item) => item.like).length;
     const allPosts = data.length;
-    const visiblePosts =this.filterPost (this.searchPost(data,term), filter);
+    const visiblePosts = this.filterPost(this.searchPost(data, term), filter);
     return (
       <div className="app">
         <AppHeader liked={liked} allPosts={allPosts} />
         <div className="searchPanel">
-          <SearchPanel
-          onUpdateSearch = {this.onUpdateSearch} />
+          <SearchPanel onUpdateSearch={this.onUpdateSearch} />
           <PostStatusFilter
-          onFilterSelect = {this.onFilterSelect}
-          filter = {filter} />
+            onFilterSelect={this.onFilterSelect}
+            filter={filter}
+          />
         </div>
         <PostList
           posts={visiblePosts}
